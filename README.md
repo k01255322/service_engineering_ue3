@@ -12,3 +12,8 @@ verletzt?
 
 Abgabe der Dokumente + zip-Datei mit dem Source Code oder Link auf Coderepository via
 Moodle bis 2.6.2019, 12 Uhr. Präsentationstermin der Übung: 3.6.2019.
+
+<b>To-Dos:
+>>Simon: REST-Schnittstelle
+>>Tobias: Angular --> index.html, Veranstaltung anlegen, (Teilnehmen und Teilnehmerliste auch noch?)
+>>Ernst: Angular --> Veranstaltungsliste</b>
