@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container">
+    <div style="text-align:center">
+        <h1>
+            <span class="badge badge-secondary">{{ title }}</span>
+        </h1>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a routerLink="/dashboard" class="navbar-brand">Dashboard</a>
+            <a routerLink="/veranstaltung-anlegen" class="navbar-brand">Veranstaltung anlegen</a>
+        </nav>
+    </div>
+    <router-outlet></router-outlet>
+
+    <button (click)="getRoom()">get</button>
+
+
+
+
+  
