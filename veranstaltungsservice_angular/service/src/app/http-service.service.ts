@@ -17,7 +17,7 @@ export class HttpServiceService {
     constructor(private http: HttpClient) { }
 
     getRooms(): Observable<Room[]> {
-        const url = '${this.url}/${id}';
+        const url = '${this.url}';
         return this.http.get<Room[]>(this.url)
 
 
