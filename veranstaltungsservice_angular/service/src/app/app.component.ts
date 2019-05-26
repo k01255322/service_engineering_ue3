@@ -1,9 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpServiceService } from './http-service.service';
-import { Room } from './room';
-
-
-
 
 @Component({
     selector: 'app-root',
@@ -13,14 +8,9 @@ import { Room } from './room';
 export class AppComponent {
     title = 'Veranstaltungsservice';
 
-    constructor(private httpService: HttpServiceService) { }
+    constructor() { }
 
-    rooms: Room[];
-
-    getRoom(): void {
-        this.httpService.getRooms()
-        .subscribe(rooms => this.rooms = rooms)
-    }
+    
 
 }
 
