@@ -1,33 +1,49 @@
-<form method="post">
-	<table class="table table-borderless" style="border-collapse: collapse;display: block;" >
-	    <tr>
-		<td>Bezeichnung:</td>
-		<td><input type="text" name="bez" placeholder ="Bezeichnung"></td>
-		</tr>
-		<tr>
-		<td>Datum:</td>
-		<td><input type="text" name="datum" placeholder="z.B. 31.12.2019"></td>
-		</tr>
-		<tr>
-		<td>Uhrzeit von:</td>
-		<td><input type="text" name="von" placeholder="z.B. 13:30"></td>
-		</tr>
-		<tr>
-		<td>Uhrzeit bis:</td>
-		<td><input type="text" name="bis" placeholder="z.B. 14:45"></td>
-		</tr>
-		<tr>
-		<td>Max Teilnehmeranzahl:</td>
-		<td><input type="number" name="maxteilnehmer" placeholder="40"></td>
-		</tr>
-		<tr>
-		<td>Ort:</td>
-		<td><input type="text" name="ort" placeholder="HS 1"></td>
-		</tr>
-		
-	</table>
+<div class="container">
+	<form >
+	  <div class="form-group">
+		<label>Bezeichnung:</label>
+		<input #bezeichnung class="form-control" required>
 	
-	<input class="btn btn-primary" type="submit" value="Anlegen">
-    </form>
-    
-    <button (click)="getRoom()">get</button>
+	  </div>
+ 
+	  <div class="form-group">
+		<label>Datum:</label>
+		<input #datum class="form-control" required>
+	
+	  </div>
+
+	  <div class="form-group">
+		<label>Uhrzeit von:</label>
+		<input #von class="form-control" required>
+	
+	  </div>
+
+	  <div class="form-group">
+		<label>Uhrzeit bis:</label>
+		<input #bis class="form-control" required>
+	
+	  </div>
+
+	  <div class="form-group">
+		<label>Teilnehmeranzahl:</label>
+		<input #max_teilnehmer class="form-control" required>
+	
+	  </div>
+
+	  <div class="form-group">
+		<label>Raum:</label>
+		<input #ort class="form-control" required>
+	
+	  </div>
+ 
+	  <button class="btn btn-primary" (click)="onClick(bezeichnung.value, datum.value, von.value, bis.value, max_teilnehmer.value, ort.value);
+	  bezeichnung.value=''; datum.value=''; von.value=''; bis.value=''; max_teilnehmer.value=''; ort.value=''">
+		  <!-- bei button einfach 2. onClick event aufrufen?-->
+		Submit</button>
+ 
+	</form>
+</div>
+
+<app-messages></app-messages>
+	
+
