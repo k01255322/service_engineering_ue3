@@ -1,4 +1,52 @@
+
+<!---
 <div  *ngFor="let event of events">
-    <span>{{event.bezeichnung}}</span>
+
+        <table style="width:100%">
+  <tr>
+    <th>Bezeichnung</th>
+    <th>Datum</th> 
+    <th>Von</th>
+  </tr>
+
+  <tr>
+    <td>{{event.bezeichnung}}</td>
+    <td>{{event.datum}}</td>
+    <td>{{event.von}}</td>
+  </tr>
+
+
+    
+<span>{{event.bezeichnung}}</span>
     <span>{{event.datum}}</span>
+
+   
+</table>
   </div>
+
+--->
+<table mdbTable bordered="true">
+  <thead>
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let event of events">
+      <th scope="row">{{event.bezeichnung}}</th>
+      <td>{{event.datum}}</td>
+      <td>{{event.von}}</td>
+      <td>{{event.bis}}</td>
+      <td>{{event.ort}}</td>
+ 
+      
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+

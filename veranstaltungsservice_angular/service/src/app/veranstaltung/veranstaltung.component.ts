@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Veranstaltung } from '../veranstaltung.interface';
 import { HttpServiceService } from '../http-service.service';
 
+
+
+
+
 @Component({
   selector: 'app-veranstaltung',
   templateUrl: './veranstaltung.component.html',
@@ -18,7 +22,7 @@ export class VeranstaltungComponent implements OnInit {
   }
 
 
-      // subscribe zu der getEvens Methode und Abfragen aller Räume
+      // subscribe zu der getEvents Methode und Abfragen aller Events
     getAllEvents(){
         this.service.getEvents().subscribe(
             (data: Veranstaltung[]) => {
@@ -26,5 +30,8 @@ export class VeranstaltungComponent implements OnInit {
             }
         )
     }
+    headElements = ['Bezeichnung', 'Datum', 'Von', 'Bis', 'Ort'];
+
+
 
 }
