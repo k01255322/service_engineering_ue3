@@ -23,6 +23,12 @@ export class HttpServiceService {
         return this.http.get<Room[]>(this.base_url + 'room/');
     }
 
+    // Methode zum Abrufen aller Veranstaltungen
+    getEvents(): Observable<Veranstaltung[]>{
+        console.log('Abrufen aller Veranstaltungen vom Server');
+        return this.http.get<Veranstaltung[]>(this.base_url + 'event/');
+    }
+
     // Methode zum Abrufen genau eines Raumes
     getRoom(id: string): Observable<Room>{
         return this.http.get<Room>(this.base_url + 'room/' + id + '/');
