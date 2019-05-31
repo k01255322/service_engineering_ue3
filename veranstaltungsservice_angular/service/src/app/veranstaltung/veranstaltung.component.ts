@@ -34,4 +34,5 @@ export class VeranstaltungComponent implements OnInit {
 
 
 
+
 }
