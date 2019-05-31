@@ -22,7 +22,7 @@ export class VeranstaltungAnlegenComponent implements OnInit {
     ngOnInit() {
         
     }
-
+/** 
     // subscribe zu der getRoom Methode und Abfragen aller Räume
     getAllRoom(){
         this.service.getRooms().subscribe(
@@ -43,7 +43,7 @@ export class VeranstaltungAnlegenComponent implements OnInit {
         () => console.log('completed') //(3)
         );
     }
-
+**/
     // Anlegen einer Veranstaltung
     onClick(bezeichnung: string, datum: string, von: string, bis: string, max_teilnehmer: number, ort: string) {
             this.service.addEvent({bezeichnung, datum, von, bis, max_teilnehmer, ort})
@@ -56,8 +56,4 @@ export class VeranstaltungAnlegenComponent implements OnInit {
             () => console.log('completed Veranstaltung einfügen') //(3)
             );
     }
-
-
-
-
 }
