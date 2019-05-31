@@ -7,12 +7,15 @@
         </h1>
 
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a routerLink="/dashboard" class="navbar-brand">Dashboard</a>
-            <a routerLink="/veranstaltung-anlegen" class="navbar-brand">Veranstaltung anlegen</a>
+            <a routerLink="/dashboard" (click)="MessageService.onClick()" class="navbar-brand">Dashboard</a>
+            <a routerLink="/veranstaltung-anlegen" (click)="MessageService.onClick()" class="navbar-brand">Veranstaltung anlegen</a>
             <a routerLink="/veranstaltung" class="navbar-brand">Veranstaltung</a>
         </nav>
     </div>
     <router-outlet></router-outlet>
+
+
+   
     
 
     

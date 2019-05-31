@@ -2,7 +2,7 @@ import { Component, OnInit, Output } from '@angular/core';
 import { HttpServiceService } from '../http-service.service';
 import { Room } from '../room.interface';
 import { Veranstaltung } from '../veranstaltung.interface';
-import { MessageService } from '../message.service';
+
 
 
 @Component({
@@ -20,6 +20,7 @@ export class VeranstaltungAnlegenComponent implements OnInit {
     constructor(private service:HttpServiceService) { }
 
     ngOnInit() {
+        
     }
 
     // subscribe zu der getRoom Methode und Abfragen aller Räume
