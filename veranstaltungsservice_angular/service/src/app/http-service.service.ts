@@ -38,18 +38,7 @@ export class HttpServiceService {
   getRoom(id: string): Observable<Room> {
     return this.http.get<Room>(this.base_url + 'room/' + id + '/');
   }
-  /**
-      // Methode zum Anlegen eines Raumes
-      addRoom(newRoom: Room): Observable<Room>{
-          return this.http.post<Room>(this.base_url + 'room/', newRoom, {
-              headers: {
-                  'Content-Type': 'application/json'
-              }
-          }
-          
-          );
-      }
-  **/
+
   // Methode zum Anlegen einer Veranstaltung
   addParticipant(newParticipant: Participiant): Observable<Participiant> {
     console.log(newParticipant + 'Teilnehmer angelegt');
