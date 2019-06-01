@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Room } from './room.interface';
-import { Veranstaltung } from './veranstaltung.interface';
+import { Veranstaltung, Teilnehmer } from './veranstaltung.interface';
 import { MessageService } from './message.service';
 import { retry, catchError } from 'rxjs/operators';
+import { Participiant } from './participiant.interface';
 
 
 
@@ -49,6 +50,18 @@ export class HttpServiceService {
           );
       }
   **/
+  // Methode zum Anlegen einer Veranstaltung
+  addParticipant(newParticipant: Participiant): Observable<Participiant> {
+    console.log('Teilnehmer angelegt');
+    return this.http.post<Participiant>(this.base_url + 'participator/', newParticipant, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).pipe(retry(1),
+      catchError(this.handleError))
+      ;
+  }
+
   // Methode zum Anlegen einer Veranstaltung
   addEvent(newEvent: Veranstaltung): Observable<Veranstaltung> {
     console.log('Veranstaltung angelegt');
