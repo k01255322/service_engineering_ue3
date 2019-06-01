@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { VeranstaltungComponent } from './veranstaltung/veranstaltung.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

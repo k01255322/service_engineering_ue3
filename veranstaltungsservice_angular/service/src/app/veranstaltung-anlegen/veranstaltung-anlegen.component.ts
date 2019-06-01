@@ -19,7 +19,6 @@ export class VeranstaltungAnlegenComponent implements OnInit {
 
     ngOnInit() {
         this.getAllRoom();
-
     }
 
     // subscribe zu der getRoom Methode und Abfragen aller Räume

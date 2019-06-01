@@ -30,16 +30,21 @@
 		</div>
 
 		<div class="form-group">
+			<label>Raum:</label>
+			<input #ort class="form-control" placeholder="Raum">
+		</div>
+<!--
+		<div class="form-group">
 			<label for="Raum">
 				Raum
 			</label>
 			<select #ort class="form-control">
-				<option *ngFor="let r of room" [value]="r.id">
+				<option *ngFor="let r of room" [value]= "r.id">
 					{{r.id}}
 				</option>
 			</select>
 		</div>
-
+	-->
 		<button class="btn btn-primary"
 			(click)="onClick(bezeichnung.value, datum.value, von.value, bis.value, max_teilnehmer.value, ort.value);">
 			Bestätigen</button>
