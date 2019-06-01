@@ -2,8 +2,6 @@ import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { HttpServiceService } from '../http-service.service';
 import { Room } from '../room.interface';
 import { Veranstaltung } from '../veranstaltung.interface';
-import { daLocale } from 'ngx-bootstrap/chronos/i18n/da';
-
 
 
 @Component({
