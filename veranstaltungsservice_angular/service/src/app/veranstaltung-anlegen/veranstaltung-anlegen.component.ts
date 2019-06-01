@@ -49,11 +49,10 @@ export class VeranstaltungAnlegenComponent implements OnInit {
             this.service.addEvent({bezeichnung, datum, von, bis, max_teilnehmer, ort})
             .subscribe(
                 (data: Veranstaltung) => {
-                    
+                    window.alert('Veranstaltung wurde angelegt');
                     console.log('eingefügt: ', data);
                 }, 
-                (error: any) => console.log(error), //(2)
-            () => console.log('completed Veranstaltung einfügen') //(3)
+                (error: any) => console.log(error) 
             );
     }
 }
