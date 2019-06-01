@@ -13,8 +13,10 @@ class RoomViewSet(viewsets.ModelViewSet):
 class ParticipatorViewSet(viewsets.ModelViewSet):
     queryset = Participator.objects.all()
     serializer_class = ParticipatorSerializer
-    filter_backends = (filters.SearchFilter, DjangoFilterBackend,)
+    filter_backends = (filters.SearchFilter, DjangoFilterBackend, filters.OrderingFilter,)
+    ordering_fields = ('id',)
     search_fields = ('vorname','nachname')
+    filter_fields = ('veranstaltung',)
 
 
 class ParticipatorListViewSet(viewsets.ReadOnlyModelViewSet, NestedViewSetMixin):
@@ -28,6 +30,7 @@ class ParticipatorListViewSet(viewsets.ReadOnlyModelViewSet, NestedViewSetMixin)
 class EventViewSet(viewsets.ModelViewSet, NestedViewSetMixin):
     queryset = Event.objects.all()
     serializer_class = EventSerializer
-    filter_backends = (filters.SearchFilter,DjangoFilterBackend )
+    filter_backends = (filters.SearchFilter,DjangoFilterBackend, filters.OrderingFilter, )
+    ordering_fields = ('bezeichnung',)
     filter_fields = ('datum','von', 'bis')
     search_fields = ('bezeichnung',)
