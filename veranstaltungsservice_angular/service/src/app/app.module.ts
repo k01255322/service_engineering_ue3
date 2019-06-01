@@ -11,7 +11,7 @@ import { HttpServiceService } from './http-service.service';
 import { FormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { VeranstaltungComponent } from './veranstaltung/veranstaltung.component';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 
 @NgModule({
   declarations: [
@@ -25,9 +25,8 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
-    BsDatepickerModule.forRoot()
-  ],
+    AppRoutingModule
+    ],
   providers: [HttpServiceService],
   bootstrap: [AppComponent]
 })
