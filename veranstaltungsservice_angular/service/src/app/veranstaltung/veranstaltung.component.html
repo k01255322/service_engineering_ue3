@@ -1,31 +1,4 @@
-
-<!---
-<div  *ngFor="let event of events">
-
-        <table style="width:100%">
-  <tr>
-    <th>Bezeichnung</th>
-    <th>Datum</th> 
-    <th>Von</th>
-  </tr>
-
-  <tr>
-    <td>{{event.bezeichnung}}</td>
-    <td>{{event.datum}}</td>
-    <td>{{event.von}}</td>
-  </tr>
-
-
-    
-<span>{{event.bezeichnung}}</span>
-    <span>{{event.datum}}</span>
-
-   
-</table>
-  </div>
-
---->
-<table mdbTable bordered="true">
+<table mdbTable class="table table-striped table-responsive-md btn-table" bordered="true">
   <thead>
     <tr>
       <th *ngFor="let head of headElements" scope="col">{{head}} </th>
@@ -38,15 +11,10 @@
       <td>{{event.von}}</td>
       <td>{{event.bis}}</td>
       <td>{{event.ort}}</td>
- 
+      <td>
+          {{event.teilnehmer}}
+      </td>
       
     </tr>
   </tbody>
 </table>
-
-
-
-
-
-
-

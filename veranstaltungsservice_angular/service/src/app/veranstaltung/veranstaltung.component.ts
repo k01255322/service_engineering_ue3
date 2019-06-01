@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Veranstaltung } from '../veranstaltung.interface';
 import { HttpServiceService } from '../http-service.service';
 
-
-
-
-
 @Component({
   selector: 'app-veranstaltung',
   templateUrl: './veranstaltung.component.html',
@@ -15,7 +11,9 @@ export class VeranstaltungComponent implements OnInit {
 
     events: Veranstaltung[];
 
-  constructor(private service:HttpServiceService) { this.getAllEvents();}
+  constructor(private service:HttpServiceService) {
+      this.getAllEvents();
+    }
 
   ngOnInit() {
       
@@ -25,14 +23,17 @@ export class VeranstaltungComponent implements OnInit {
       // subscribe zu der getEvents Methode und Abfragen aller Events
     getAllEvents(){
         this.service.getEvents().subscribe(
-            (data: Veranstaltung[]) => {
-                this.events = data;
+            (data: any) => {
+                this.events = data.results;
+                      for(let event of this.events) {
+          event.teilnehmer = event.veranstaltung.map(function(item) {
+            return item['vorname'] + " " + item['nachname'];
+          });
+      }
             }
         )
     }
-    headElements = ['Bezeichnung', 'Datum', 'Von', 'Bis', 'Ort'];
-
-
+    headElements = ['Bezeichnung', 'Datum', 'Von', 'Bis', 'Ort', 'Teilnehmer'];
 
 
 }
