@@ -24,9 +24,9 @@ export class VeranstaltungAnlegenComponent implements OnInit {
     // subscribe zu der getRoom Methode und Abfragen aller Räume
     getAllRoom() {
         this.service.getRooms().subscribe(
-            (data: Room[]) => {
-                this.room = data;
-                console.log(data);
+            (data: any) => {
+                this.room = data.results;
+                console.log(data.results);
             }
         )
     }
