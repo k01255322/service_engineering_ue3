@@ -1,7 +1,7 @@
 import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { HttpServiceService } from '../http-service.service';
 import { Room } from '../room.interface';
-import { Veranstaltung } from '../veranstaltung.interface';
+import { Veranstaltung, Teilnehmer } from '../veranstaltung.interface';
 
 
 @Component({
@@ -32,8 +32,8 @@ export class VeranstaltungAnlegenComponent implements OnInit {
     }
 
     // Anlegen einer Veranstaltung
-    onClick(bezeichnung: string, datum: string, von: string, bis: string, max_teilnehmer: number, ort: string) {
-        this.service.addEvent({ bezeichnung, datum, von, bis, max_teilnehmer, ort })
+    onClick(bezeichnung: string, datum: string, von: string, bis: string, max_teilnehmer: number, ort: string, veranstaltung: Teilnehmer[]) {
+        this.service.addEvent({ bezeichnung, datum, von, bis, max_teilnehmer, ort, veranstaltung })
             .subscribe(
                 (data: Veranstaltung) => {
                     window.alert('Veranstaltung wurde angelegt');

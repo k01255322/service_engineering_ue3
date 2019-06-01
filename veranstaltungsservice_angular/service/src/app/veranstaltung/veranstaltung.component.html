@@ -12,7 +12,7 @@
       <td>{{event.bis}}</td>
       <td>{{event.ort}}</td>
       <td>
-          {{event.teilnehmer}}
+          <li *ngFor="let obj of event.veranstaltung">{{obj.vorname}} {{obj.nachname}}</li>
       </td>
       
     </tr>

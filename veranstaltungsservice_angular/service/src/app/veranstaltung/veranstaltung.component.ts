@@ -25,11 +25,6 @@ export class VeranstaltungComponent implements OnInit {
         this.service.getEvents().subscribe(
             (data: any) => {
                 this.events = data.results;
-                      for(let event of this.events) {
-          event.teilnehmer = event.veranstaltung.map(function(item) {
-            return item['vorname'] + " " + item['nachname'];
-          });
-      }
             }
         )
     }
