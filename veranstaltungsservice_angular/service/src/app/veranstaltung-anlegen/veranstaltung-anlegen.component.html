@@ -1,52 +1,50 @@
 <div class="container">
-	<form >
-	  <div class="form-group">
-		<label>Bezeichnung:</label>
-		<input #bezeichnung class="form-control" placeholder="Bezeichnung"
-	>
-	
-	  </div>
- 
-	  <div class="form-group">
-		<label>Datum:</label>
-		<input #datum class="form-control" placeholder="YYYY-MM-DD">
-	
-	  </div>
+	<form>
+		<div class="form-group">
+			<label>Bezeichnung:</label>
+			<input #bezeichnung class="form-control" placeholder="Bezeichnung">
 
-	  <div class="form-group">
-		<label>Uhrzeit von:</label>
-		<input #von class="form-control" placeholder="HH:MM">
-	
-	  </div>
+		</div>
 
-	  <div class="form-group">
-		<label>Uhrzeit bis:</label>
-		<input #bis class="form-control" placeholder="HH:MM">
-	
-	  </div>
+		<div class="form-group">
+			<label>Datum:</label>
+			<input type="date" #datum class="form-control" placeholder="YYYY-MM-DD">
 
-	  <div class="form-group">
-		<label>Teilnehmeranzahl:</label>
-		<input #max_teilnehmer class="form-control" placeholder="Anzahl der Teilnehmer">
-	
-	  </div>
+		</div>
 
-	  <div class="form-group">
-		<label>Raum:</label>
-		<input #ort class="form-control" placeholder="Raum">
-	
-	  </div>
- 
-	  <button class="btn btn-primary" (click)="onClick(bezeichnung.value, datum.value, von.value, bis.value, max_teilnehmer.value, ort.value);">
-		Bestätigen</button>
- 
+		<div class="form-group">
+			<label>Uhrzeit von:</label>
+			<input type="time" #von class="form-control" placeholder="HH:MM">
+
+		</div>
+
+		<div class="form-group">
+			<label>Uhrzeit bis:</label>
+			<input type="time" #bis class="form-control" placeholder="HH:MM">
+
+		</div>
+
+		<div class="form-group">
+			<label>Teilnehmeranzahl:</label>
+			<input #max_teilnehmer class="form-control" placeholder="Anzahl der Teilnehmer">
+		</div>
+
+		<div class="form-group">
+			<label for="Raum">
+				Raum
+			</label>
+			<select #ort class="form-control">
+				<option *ngFor="let r of room" [value]="r.id">
+					{{r.id}}
+				</option>
+			</select>
+		</div>
+
+		<button class="btn btn-primary"
+			(click)="onClick(bezeichnung.value, datum.value, von.value, bis.value, max_teilnehmer.value, ort.value);">
+			Bestätigen</button>
+
 	</form>
 </div>
 <br>
 <app-messages></app-messages>
-
-
-
-
-	
-
