@@ -8,9 +8,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpServiceService } from './http-service.service';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { VeranstaltungComponent } from './veranstaltung/veranstaltung.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -18,13 +19,14 @@ import { VeranstaltungComponent } from './veranstaltung/veranstaltung.component'
     VeranstaltungAnlegenComponent,
     DashboardComponent,
     MessagesComponent,
-    VeranstaltungComponent
+    VeranstaltungComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [HttpServiceService],
   bootstrap: [AppComponent]

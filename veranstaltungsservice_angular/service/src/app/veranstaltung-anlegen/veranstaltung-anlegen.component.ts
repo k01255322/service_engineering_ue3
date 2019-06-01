@@ -1,7 +1,8 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { HttpServiceService } from '../http-service.service';
 import { Room } from '../room.interface';
 import { Veranstaltung } from '../veranstaltung.interface';
+import { daLocale } from 'ngx-bootstrap/chronos/i18n/da';
 
 
 
@@ -14,45 +15,37 @@ import { Veranstaltung } from '../veranstaltung.interface';
 
 export class VeranstaltungAnlegenComponent implements OnInit {
 
-   room: Room[];
+    room: Room[];
 
-
-    constructor(private service:HttpServiceService) { }
+    constructor(private service: HttpServiceService) { }
 
     ngOnInit() {
-        
+        this.getAllRoom();
+
     }
-/** 
+
     // subscribe zu der getRoom Methode und Abfragen aller Räume
-    getAllRoom(){
+    getAllRoom() {
         this.service.getRooms().subscribe(
             (data: Room[]) => {
                 this.room = data;
+                console.log(data);
             }
         )
     }
 
-
-    // Anlegen eines Raumes
-    onClick1(id: string) {
-        this.service.addRoom({id}).subscribe(
-            (data: Room) => {
-                console.log('eingefügt', data)
-            }, 
-            (error: any) => console.log(error), //(2)
-        () => console.log('completed') //(3)
-        );
-    }
-**/
     // Anlegen einer Veranstaltung
     onClick(bezeichnung: string, datum: string, von: string, bis: string, max_teilnehmer: number, ort: string) {
-            this.service.addEvent({bezeichnung, datum, von, bis, max_teilnehmer, ort})
+        this.service.addEvent({ bezeichnung, datum, von, bis, max_teilnehmer, ort })
             .subscribe(
                 (data: Veranstaltung) => {
                     window.alert('Veranstaltung wurde angelegt');
+                    window.location.reload();
                     console.log('eingefügt: ', data);
-                }, 
-                (error: any) => console.log(error) 
+                },
+                (error: any) => console.log(error)
             );
     }
+
+
 }
