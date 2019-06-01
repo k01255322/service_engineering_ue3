@@ -18,7 +18,7 @@ from django.urls import include,path
 from .api import router
 from rest_framework_swagger.views import get_swagger_view
 
-schema_view = get_swagger_view(title='Logistics Api')
+schema_view = get_swagger_view(title='Veranstaltung Api')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),

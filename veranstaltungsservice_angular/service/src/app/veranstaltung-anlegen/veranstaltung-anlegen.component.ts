@@ -2,7 +2,7 @@ import { Component, OnInit, Output } from '@angular/core';
 import { HttpServiceService } from '../http-service.service';
 import { Room } from '../room.interface';
 import { Veranstaltung } from '../veranstaltung.interface';
-import { MessageService } from '../message.service';
+
 
 
 @Component({
@@ -20,8 +20,9 @@ export class VeranstaltungAnlegenComponent implements OnInit {
     constructor(private service:HttpServiceService) { }
 
     ngOnInit() {
+        
     }
-
+/** 
     // subscribe zu der getRoom Methode und Abfragen aller Räume
     getAllRoom(){
         this.service.getRooms().subscribe(
@@ -42,21 +43,16 @@ export class VeranstaltungAnlegenComponent implements OnInit {
         () => console.log('completed') //(3)
         );
     }
-
+**/
     // Anlegen einer Veranstaltung
     onClick(bezeichnung: string, datum: string, von: string, bis: string, max_teilnehmer: number, ort: string) {
             this.service.addEvent({bezeichnung, datum, von, bis, max_teilnehmer, ort})
             .subscribe(
                 (data: Veranstaltung) => {
-                    
+                    window.alert('Veranstaltung wurde angelegt');
                     console.log('eingefügt: ', data);
                 }, 
-                (error: any) => console.log(error), //(2)
-            () => console.log('completed Veranstaltung einfügen') //(3)
+                (error: any) => console.log(error) 
             );
     }
-
-
-
-
 }
