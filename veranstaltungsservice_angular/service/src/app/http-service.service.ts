@@ -6,7 +6,7 @@ import { Veranstaltung, Teilnehmer } from './veranstaltung.interface';
 import { MessageService } from './message.service';
 import { retry, catchError } from 'rxjs/operators';
 import { Participiant } from './participiant.interface';
-
+import { Anmelden } from './anmelden.interface';
 
 
 
@@ -52,7 +52,7 @@ export class HttpServiceService {
   **/
   // Methode zum Anlegen einer Veranstaltung
   addParticipant(newParticipant: Participiant): Observable<Participiant> {
-    console.log('Teilnehmer angelegt');
+    console.log(newParticipant + 'Teilnehmer angelegt');
     return this.http.post<Participiant>(this.base_url + 'participator/', newParticipant, {
       headers: {
         'Content-Type': 'application/json'
@@ -72,6 +72,16 @@ export class HttpServiceService {
     }).pipe(retry(1),
       catchError(this.handleError))
       ;
+  }
+
+  // Methode zum Anmelden zu einer Veranstaltung
+  registerEvent(newReg: Anmelden): Observable<Anmelden> {
+    console.log('Registrieren');
+    return this.http.post<Anmelden>(this.base_url + 'participator/', newReg, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
   }
 
   handleError(error) {

@@ -11,6 +11,7 @@ import { HttpServiceService } from './http-service.service';
 import { FormsModule } from '@angular/forms';
 import { MessagesComponent } from './messages/messages.component';
 import { VeranstaltungComponent } from './veranstaltung/veranstaltung.component';
+import { ParticipatnComponent } from './participatn/participatn.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { VeranstaltungComponent } from './veranstaltung/veranstaltung.component'
     DashboardComponent,
     MessagesComponent,
     VeranstaltungComponent,
+    ParticipatnComponent,
   ],
   imports: [
     BrowserModule,
