@@ -57,7 +57,24 @@ py manage.py createsuperuser
 ```python
 py manage.py runserver
 ```
-
+Terminal nicht schließen!!
 Die REST-Schnittstelle ist unter http://127.0.0.1:8000/api/ erreichbar.
 Die Swagger-Dokumentation ist unter http://127.0.0.1:8000/doc/ erreichbar.
 Die Datenbank kann unter http://127.0.0.1:8000/admin/ direkt bearbeitet werden. Login ist mit den in Schritt 4 angelegten Daten möglich!
+
+Angular-Server
+==================
+# Schritt 1
+Ins Verzeichnis veranstaltungsservice_angular/service/ wechseln
+```python
+npm install
+```
+
+
+# Schritt 2
+
+```python
+ng serve
+```
+Im Browser localhost:4200 eingeben
+
