@@ -33,7 +33,7 @@ export class VeranstaltungComponent implements OnInit {
 
 
         // Anlegen einer Veranstaltung
-    onClick( vorname: string, nachname: string, veranstaltung: number) {
+    onClick( vorname: string, nachname: string, veranstaltung: string) {
         this.service.addParticipant({ vorname, nachname, veranstaltung })
             .subscribe(
                 (data: Participiant) => {
