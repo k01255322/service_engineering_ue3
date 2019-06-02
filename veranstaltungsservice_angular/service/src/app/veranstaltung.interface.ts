@@ -1,5 +1,6 @@
 
 export interface Veranstaltung {
+    id: number;
     bezeichnung: string,
     datum: string,
     von: string,

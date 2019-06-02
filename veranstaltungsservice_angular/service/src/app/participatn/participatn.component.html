@@ -17,14 +17,14 @@
 				Veranstaltung
 			</label>
 			<select #veranstaltung class="form-control">
-				<option *ngFor="let v of events" [value]= "v.bezeichnung">
+				<option *ngFor="let v of events" [value]= "v.id">
 					{{v.bezeichnung}}
 				</option>
 			</select>
 		</div>
 
 		<button class="btn btn-primary"
-			(click)="onClick(vorname.value, nachname.value, veranstaltung.value);">
+			(click)="onClick(vorname.value, nachname.value, ParseInt(veranstaltung.value));">
 			Anmelden</button>
 
 	</form>

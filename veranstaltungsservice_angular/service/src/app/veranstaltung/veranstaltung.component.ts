@@ -33,8 +33,8 @@ export class VeranstaltungComponent implements OnInit {
 
 
         // Anlegen einer Veranstaltung
-    onClick(id: number, vorname: string, nachname:string, veranstaltung: string) {
-        this.service.addParticipant({ id, vorname, nachname, veranstaltung })
+    onClick( vorname: string, nachname: string, veranstaltung: number) {
+        this.service.addParticipant({ vorname, nachname, veranstaltung })
             .subscribe(
                 (data: Participiant) => {
                     window.alert('Teilnehmer wurde angelegt');

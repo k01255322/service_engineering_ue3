@@ -32,8 +32,8 @@ export class VeranstaltungAnlegenComponent implements OnInit {
     }
 
     // Anlegen einer Veranstaltung
-    onClick(bezeichnung: string, datum: string, von: string, bis: string, max_teilnehmer: number, ort: string, veranstaltung: Teilnehmer[]) {
-        this.service.addEvent({ bezeichnung, datum, von, bis, max_teilnehmer, ort, veranstaltung })
+    onClick(id: number = 0, bezeichnung: string, datum: string, von: string, bis: string, max_teilnehmer: number, ort: string, veranstaltung: Teilnehmer[]) {
+        this.service.addEvent({ id, bezeichnung, datum, von, bis, max_teilnehmer, ort, veranstaltung })
             .subscribe(
                 (data: Veranstaltung) => {
                     window.alert('Veranstaltung wurde angelegt');

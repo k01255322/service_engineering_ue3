@@ -31,4 +31,9 @@ class EventSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Event
-        fields = ('bezeichnung', 'datum', 'von', 'bis', 'max_teilnehmer', 'ort','veranstaltung')
+        fields = ('id','bezeichnung', 'datum', 'von', 'bis', 'max_teilnehmer', 'ort','veranstaltung')
+
+    def create(self, validated_data):
+        validated_data.pop('id', None)  # remove movie_id from the comment data
+
+        return Event.objects.create(**validated_data)
