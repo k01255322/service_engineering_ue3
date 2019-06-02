@@ -1,6 +1,6 @@
 
 export interface Participiant {
-    // id: number,
+    id: number,
     vorname: string;
     nachname: string;
     veranstaltung: number;

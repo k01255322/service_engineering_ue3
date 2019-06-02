@@ -24,13 +24,12 @@ export class ParticipatnComponent implements OnInit {
         (data: any) => {
             this.events = data.results;
             console.log(data.results);
-            console.log(this.events[0]);
         }
         
     )
 }
 
-// Anlegen einer Veranstaltung
+// Anlegen einer Anmeldung
 onClick(vorname: string, nachname: string, vid: number) {
   this.service.registerEvent({ vorname, nachname, vid })
       .subscribe(
