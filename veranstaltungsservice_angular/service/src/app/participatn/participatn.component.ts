@@ -31,6 +31,7 @@ export class ParticipatnComponent implements OnInit {
 
 // Anlegen einer Anmeldung
 onClick(vorname: string, nachname: string, vid: number) {
+  console.log(vorname, nachname, vid);
   this.service.registerEvent({ vorname, nachname, vid })
       .subscribe(
           (data: Anmelden) => {
