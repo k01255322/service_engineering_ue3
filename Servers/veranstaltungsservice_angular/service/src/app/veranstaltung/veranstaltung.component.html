@@ -1,0 +1,22 @@
+<table mdbTable class="table table-striped table-responsive-md btn-table" bordered="true">
+  <thead>
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr mdbTableCol *ngFor="let event of events">
+      <th scope="row">{{event.bezeichnung}}</th>
+      <td>{{event.datum}}</td>
+      <td>{{event.von}}</td>
+      <td>{{event.bis}}</td>
+      <td>{{event.ort}}</td>
+      <td>
+        
+          <li *ngFor="let obj of event.veranstaltung">{{obj.vorname}} {{obj.nachname}}</li>
+         <!-- <button class="btn btn-primary" (click)="onClick(24, 'test', 'test', event.bezeichnung)">+</button>-->
+      </td>
+      
+    </tr>
+  </tbody>
+</table>
