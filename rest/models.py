@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Room(models.Model):
@@ -9,6 +10,7 @@ class Room(models.Model):
 
 
 class Event(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     bezeichnung = models.CharField(max_length=50)
     datum = models.DateField(default='2019-01-01')
     von = models.TimeField(default='10:00')

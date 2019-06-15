@@ -17,12 +17,16 @@ from django.contrib import admin
 from django.urls import include,path
 from .api import router
 from rest_framework_swagger.views import get_swagger_view
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
+
 
 schema_view = get_swagger_view(title='Veranstaltung Api')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('doc/', schema_view),
+    path(r'api-token-auth/', obtain_jwt_token),
+    path(r'api-token-refresh/', refresh_jwt_token),
 
 ]
 
