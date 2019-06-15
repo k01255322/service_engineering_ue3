@@ -4,6 +4,7 @@ import { Veranstaltung } from '../veranstaltung.interface';
 import { Anmelden } from '../anmelden.interface';
 
 
+
 @Component({
   selector: 'app-participatn',
   templateUrl: './participatn.component.html',
@@ -32,6 +33,7 @@ export class ParticipatnComponent implements OnInit {
 // Anlegen einer Anmeldung
 onClick(vorname: string, nachname: string, veranstaltung: number) {
   console.log(vorname, nachname, veranstaltung);
+ 
   this.service.registerEvent({ vorname, nachname, veranstaltung })
       .subscribe(
           (data: Anmelden) => {
