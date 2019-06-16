@@ -2,13 +2,13 @@
 	<form>
 		<div class="form-group">
 			<label>Vorname:</label>
-			<input type="text" #vorname class="form-control" placeholder="Vorname">
+			<input [(ngModel)]="vorname" name="vorname" class="form-control" placeholder="Vorname">
 
 		</div>
 
 		<div class="form-group">
 			<label>Nachname:</label>
-			<input type="text" #nachname class="form-control" placeholder="Nachname">
+			<input [(ngModel)]="nachname" name="nachname" class="form-control" placeholder="Nachname">
 
 		</div>
 
@@ -16,7 +16,7 @@
 			<label >
 				Veranstaltung
 			</label>
-			<select #veranstaltung class="form-control">
+			<select [(ngModel)]="veranstaltung" name="veranstaltung" class="form-control">
 				<option *ngFor="let v of events" [value]= "v.id">
 					{{v.bezeichnung}}
 				</option>
@@ -24,7 +24,7 @@
 		</div>
 
 		<button class="btn btn-primary"
-			(click)="onClick(vorname.value, nachname.value, veranstaltung.value)">
+			(click)="onClick()">
 			Anmelden</button>
 
 	</form>

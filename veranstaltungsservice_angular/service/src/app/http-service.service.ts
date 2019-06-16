@@ -92,8 +92,14 @@ export class HttpServiceService {
 
   // Methode zum Abrufen aller Veranstaltungen
   getEvents(): Observable<Veranstaltung[]> {
+	 //Post token
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'JWT ' + this.token})
+    };  
     console.log('Abrufen aller Veranstaltungen vom Server');
-    return this.http.get<Veranstaltung[]>(this.base_url + 'event/');
+    return this.http.get<Veranstaltung[]>(this.base_url + 'event/', httpOptions);
   }
 
   // Methode zum Abrufen genau eines Raumes
