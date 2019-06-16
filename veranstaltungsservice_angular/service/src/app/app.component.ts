@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpServiceService } from './http-service.service';
+import {MessageService} from './message.service';
 
 
 
@@ -18,7 +19,7 @@ export class AppComponent {
   public user: any;
 
 
-    constructor(private _userService: HttpServiceService) { }
+    constructor(private _userService: HttpServiceService, public MessageService:MessageService) { }
  
   ngOnInit() {
     this.user = {

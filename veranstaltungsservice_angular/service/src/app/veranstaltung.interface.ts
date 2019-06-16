@@ -7,7 +7,7 @@ export interface Veranstaltung {
     bis: string,
     max_teilnehmer: number,
     ort: string,
-    veranstaltung: Teilnehmer[]
+    veranstaltung?: Teilnehmer[]
 }
 
 export interface Teilnehmer {

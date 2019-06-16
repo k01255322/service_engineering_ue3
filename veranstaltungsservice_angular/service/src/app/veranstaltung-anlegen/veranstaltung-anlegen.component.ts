@@ -14,6 +14,14 @@ import { Veranstaltung, Teilnehmer } from '../veranstaltung.interface';
 export class VeranstaltungAnlegenComponent implements OnInit {
 
     room: Room[];
+    bezeichnung: string;
+    datum: string;
+    von:string;
+    bis:string;
+    max_teilnehmer:number;
+    ort:string;
+
+
 
     constructor(private service: HttpServiceService) { }
 
@@ -32,12 +40,17 @@ export class VeranstaltungAnlegenComponent implements OnInit {
     }
 
     // Anlegen einer Veranstaltung
-    onClick(id: number = 0, bezeichnung: string, datum: string, von: string, bis: string, max_teilnehmer: number, ort: string, veranstaltung: Teilnehmer[]) {
-        this.service.addEvent({ id, bezeichnung, datum, von, bis, max_teilnehmer, ort, veranstaltung })
+    onClick() {
+        this.service.addEvent({ id: 0, bezeichnung: this.bezeichnung, datum: this.datum, von: this.von, bis: this.bis, max_teilnehmer: this.max_teilnehmer, ort: this.ort })
             .subscribe(
                 (data: Veranstaltung) => {
                     window.alert('Veranstaltung wurde angelegt');
-                    window.location.reload();
+                    this.bezeichnung = '';
+                    this.datum = '';
+                    this.von = '';
+                    this.bis = '';
+                    this.max_teilnehmer = 0;
+                    this.ort = '';
                     console.log('eingefügt: ', data);
                 },
                 (error: any) => console.log(error)
