@@ -34,7 +34,7 @@ class UserSerializer(serializers.ModelSerializer):
 class EventSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField(many=False)
     ort = serializers.PrimaryKeyRelatedField(queryset=Room.objects.all())
-    veranstaltung = ParticipatorListSerializer(many=True, write_only=True,required=False)
+    veranstaltung = ParticipatorListSerializer(many=True,read_only=True, required=False)
 
     class Meta:
         model = Event
